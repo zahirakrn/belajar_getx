@@ -1,15 +1,18 @@
 import 'package:belajar_getx/app/modules/dashboard/views/dashboard_view.dart';
 import 'package:belajar_getx/app/utils/api.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:flutter/widgets.dart';
+
 
 class RegisterController extends GetxController {
   final _getConnect = GetConnect();
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController passwordConfirmController = TextEditingController();
+  TextEditingController passwordConfirmationController =
+      TextEditingController();
   final authToken = GetStorage();
 
   void registerNow() async {
@@ -17,12 +20,13 @@ class RegisterController extends GetxController {
       'name': nameController.text,
       'email': emailController.text,
       'password': passwordController.text,
-      'password_confirmation': passwordConfirmController.text,
+      'password_confirmation': passwordConfirmationController.text,
     });
+
     if (response.statusCode == 201) {
       authToken.write('token', response.body['token']);
       Get.offAll(() => const DashboardView());
-    }else {
+    } else {
       Get.snackbar(
         'Error',
         response.body['error'].toString(),
@@ -39,7 +43,6 @@ class RegisterController extends GetxController {
     }
   }
 
-
   @override
   void onInit() {
     super.onInit();
@@ -55,9 +58,7 @@ class RegisterController extends GetxController {
     emailController.dispose();
     passwordController.dispose();
     nameController.dispose();
-    passwordConfirmController.dispose();
+    passwordConfirmationController.dispose();
     super.onClose();
   }
-
- 
 }

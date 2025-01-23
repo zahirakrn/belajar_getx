@@ -6,7 +6,7 @@ class ProfileResponse {
   String? createdAt;
   String? updatedAt;
   String? avatar;
- 
+
   ProfileResponse(
       {this.id,
       this.name,

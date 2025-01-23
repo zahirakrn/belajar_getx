@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:lottie/lottie.dart';
+import 'package:get/get.dart';
 
 import '../controllers/register_controller.dart';
 
@@ -25,7 +23,7 @@ class RegisterView extends GetView<RegisterController> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: TextField(
                 controller: controller.nameController,
                 decoration: const InputDecoration(
@@ -58,10 +56,10 @@ class RegisterView extends GetView<RegisterController> {
                 ),
               ),
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: TextField(
-                controller: controller.passwordConfirmController,
+                controller: controller.passwordConfirmationController,
                 obscureText: true,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),

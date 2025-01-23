@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:belajar_getx/app/data/profile_response.dart';
 import 'package:belajar_getx/app/modules/profile/controllers/profile_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class ProfileView extends GetView<ProfileController> {
